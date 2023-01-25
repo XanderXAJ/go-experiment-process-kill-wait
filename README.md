@@ -29,3 +29,6 @@ manager: Running kill child
 child: Awaiting signal
 manager: child killed
 ```
+
+For my needs, since I want to use interrupt signals instead of kill signals, I'll look in to writing my own signal handling using `signal.Notify()` or `signal.NotifyContext()` instead of passing a context to `exec.CommandContext()`.
+The Go engineers themselves have run in to the same limitations and [have done something similar for the Go Playground](https://github.com/golang/go/issues/22757#issuecomment-652421437).
